@@ -20,6 +20,10 @@ header {
     position: fixed;
 }
 
+.bodySpace {
+    padding-top: 70px
+}
+
 .logoImg {
     margin-right: auto;
     margin-left: 20px;

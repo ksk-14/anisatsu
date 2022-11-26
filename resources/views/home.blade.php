@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/commonPart.css">
-    <title>Anisatsu</title>
+    <link rel="stylesheet" href="css/home.css">
+    <title>アニサツ！</title>
     @viteReactRefresh
     @vite(['resources/css/app.css', 'resources/js/home.jsx'])
 </head>
