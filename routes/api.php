@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\AnnictController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Route::get('/example', 'AnnictController@getIndex');
+// Route::get('/example', 'App\Http\Controllers\API\AnnictController@getIndex');
+Route::get('/getIndex', [AnnictController::class, 'getIndex']);
+Route::get('/works/{id}', [AnnictController::class, 'getDetail']);
