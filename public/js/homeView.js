@@ -10,7 +10,8 @@ fetch('/api/getIndex')
             a.href = `/works/${work.id}`;
             a.classList.add('work-link');
             a.setAttribute('data-work-id', work.id);
-            a.setAttribute('onclick', 'showWork(event)');
+            a.setAttribute('href', `/api/works/${work.id}`);
+            // a.setAttribute('onclick', 'showWork(event)');
 
             const imageContainer = document.createElement('div');
             imageContainer.classList.add('work-image');

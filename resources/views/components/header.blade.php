@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="{{ asset('css/common.css') }}">
     <title>Page</title>
 </head>
 <body>
     <header>
-        <img class="logoImg" src="img/header.svg" alt="ヘッダーロゴ画像">
+        <img class="logoImg" src="{{ asset('img/header.svg') }}" alt="ヘッダーロゴ画像">
         <nav class="nav">
             <ul>
                 <li class="menuItem"><a href="#">Contact</a></li>

@@ -24,16 +24,22 @@ class AnnictController extends Controller
             "per_page" => 15,
         );
         $works = $this->annictClient->getWorks($params);
-        // dd($works);
         return $works;
     }
 
     public function getDetail($id)
     {
-        $params = array(
+        $worksParams = array(
             "filter_ids" => $id,
         );
-        $works = $this->annictClient->getWorks($params);
-        return $works;
+        $episodesParams = array(
+            "filter_work_id" => $id,
+            'sort_sort_number' => 'asc',
+        );
+        $worksResult = $this->annictClient->getWorks($worksParams);
+        $episodesResult = $this->annictClient->getEpisodes($episodesParams);
+        $works = $worksResult['works'][0];
+        $episodes = $episodesResult['episodes'];
+        return view('detail', compact('works', 'episodes'));
     }
 }

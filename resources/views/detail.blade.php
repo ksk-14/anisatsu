@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-    <script src="{{ asset('js/homeView.js') }}"></script>
+    {{-- <script src="{{ asset('js/homeView.js') }}"></script> --}}
     <title>アニサツ！</title>
 </head>
 
@@ -14,9 +14,11 @@
     <div class="bodySpace">
         <div id="home">
             <div class='contentCenter'>
-                <p class='contentTitle'>考察するアニメを探す</p>
-                <input class="searchInput" type="text">
-                <p class='contentTitle pickup'>注目アニメ</p>
+                <p class='contentTitle pickup'>{{ $works['title'] }}</p>
+                @foreach($episodes as $episode)
+                    <p class='contentTitle pickup'>{{ $episode['title'] }}</p>
+                    <p class='contentTitle pickup'>{{ $episode['number'] }}</p>
+                @endforeach
                 <div class="works">
                     <ul id="works-list">
                     </ul>
