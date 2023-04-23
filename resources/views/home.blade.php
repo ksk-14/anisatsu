@@ -2,7 +2,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/home.css">
     <script src="{{ asset('js/annict.js') }}"></script>
     <script src="{{ asset('js/load.js') }}"></script>
@@ -11,12 +10,7 @@
 
 <body>
     <header>
-        <img class="logoImg" src="img/header.svg" alt="ヘッダーロゴ画像">
-        <nav class="nav">
-            <ul>
-                <li class="menuItem"><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+        <x-header></x-header>
     </header>
     <div class="bodySpace">
         <div id="home">

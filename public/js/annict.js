@@ -42,10 +42,15 @@ function showWork(event) {
     .then(data => {
         data.works.forEach(work =>{
             const title = work.title;
+            const url = work.official_site_url;
+            const season = work.season_name_text;
+            console.log(work)
     
           // 作品詳細を表示するためのHTMLを組み立てる
             const detailHtml = `
             <h2>${title}</h2>
+            <a href='${url}'>公式サイト</a>
+            <p>${season}</p>
             `;
     
           // 作品詳細を表示するための要素を作成し、HTMLを挿入する
