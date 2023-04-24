@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
             $table->integer('anime_id');
-            $table->integer('season');
             $table->integer('episode');
+            $table->string('room_title');
             $table->timestamps();
         });
     }

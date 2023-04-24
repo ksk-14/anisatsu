@@ -18,7 +18,7 @@
             <div class='contentCenter'>
                 <div class="cards">
                     <div class="card">
-                        {{ dd($episodes) }}
+                        {{-- {{ dd($episodes) }} --}}
                         <img src="{{ $works['images']['facebook']['og_image_url'] }}" alt="" class="img">
                         <div class="textbox">
                             <div class="t-title">
@@ -36,7 +36,7 @@
                                     <option value="">--</option>
                                     @foreach ($episodes as $episode)
                                         @if ($episode['title'])
-                                            <option value="{{ $episode['id'] }}">{{ $episode['number_text'] }}</option>
+                                            <option value="{{ $works['id'] }}_{{ (string)$episode['number'] }}">{{ $episode['number_text'] }}</option>
                                         @endif
                                     @endforeach
                                 </select>
