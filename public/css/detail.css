@@ -1,0 +1,105 @@
+.cards{
+  margin-left: 100px;
+  margin-top: 50px;
+  height: fit-content;
+}
+
+.cards::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.card {
+  width: 400px;
+  height: auto;
+  overflow: hidden;
+  border-radius: 30px;
+  /* box-shadow: 0 5px 4px rgba(0,0,0,0.2); */
+  box-shadow: 0 0 15px rgb(68, 68, 68);
+  float: left;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  box-sizing: border-box;
+  background-size: cover;
+  vertical-align: bottom;
+}
+
+.textbox {
+  width: 400px;
+  height: auto;
+  padding: 20px 18px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.t-title {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 125%;
+}
+
+.t-text {
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.work_info{
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+.season_info{
+  text-align: center;
+  border: 2px solid;
+  border-color: #FF5FF9;
+  color: #FF5FF9;
+  border-radius: 10px;
+  font-size: small;
+  padding-left: 3px;
+  margin-right: 13px;
+}
+
+.web_site{
+  text-align: center;
+  border: 2px solid;
+  border-color: #18D5FF;
+  color: #18D5FF;
+  border-radius: 10px;
+  font-size: small;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.pd-t-episode{
+  text-align: left;
+  margin-left: 60px;
+}
+
+.pd-episode{
+    width: 100px;
+    border-radius: 20px;
+    height: 30px;
+}
+
+.pd-episode option{
+  font-size: medium;
+  text-align: center;
+}
+
+.card.think-index-board{
+  margin-left: 100px;
+  margin-top: 50px;
+  width: 900px;
+  min-height: 700px;
+}
+
+.think-label{
+  font: italic 20px Meiryo;
+  text-align: left;
+  margin-left: 870px;
+}
