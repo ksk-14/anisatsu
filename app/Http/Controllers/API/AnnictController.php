@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Services\AnnictClient;
+use App\Http\Controllers\API\SelfController;
 
 
 class AnnictController extends Controller
@@ -29,6 +30,8 @@ class AnnictController extends Controller
 
     public function getDetail($id)
     {
+        $selfController = new SelfController();
+        $rooms = $selfController->getRoom($id);
         $worksParams = array(
             "filter_ids" => $id,
         );
@@ -40,6 +43,7 @@ class AnnictController extends Controller
         $episodesResult = $this->annictClient->getEpisodes($episodesParams);
         $works = $worksResult['works'][0];
         $episodes = $episodesResult['episodes'];
-        return view('detail', compact('works', 'episodes'));
+        // dd($rooms);
+        return view('detail', compact('works', 'episodes', 'rooms'));
     }
 }

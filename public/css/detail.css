@@ -96,10 +96,35 @@
   margin-top: 50px;
   width: 900px;
   min-height: 700px;
+  padding: 10px 10px;
 }
 
 .think-label{
   font: italic 20px Meiryo;
   text-align: left;
   margin-left: 870px;
+}
+
+.thread-li{
+  width: 800px;
+  height: 80px;
+  text-align: left;
+  margin-top: 18px;
+  margin-left: 40px;
+  padding-top: 15px;
+  padding-left: 30px;
+  overflow: hidden;
+  border-radius: 30px;
+  /* box-shadow: 0 5px 4px rgba(0,0,0,0.2); */
+  box-shadow: 0 0 15px rgb(68, 68, 68);
+  float: left;
+  background-color: rgb(235, 235, 235);
+}
+
+.thread-p{
+  text-align: right;
+  vertical-align: bottom;
+  font-size: small;
+  margin-top: 30px;
+  margin-right: 20px;
 }

@@ -33,7 +33,7 @@
                             <div>
                                 <div class="pd-t-episode">エピソード</div>
                                 <select class="pd-episode" name=”item” id="pd-episode">
-                                    <option value="">--</option>
+                                    <option value="{{ $works['id'] }}_">全て</option>
                                     @foreach ($episodes as $episode)
                                         @if ($episode['title'])
                                             <option value="{{ $works['id'] }}_{{ (string)$episode['number'] }}">{{ $episode['number_text'] }}</option>
@@ -45,6 +45,14 @@
                     </div>
                     <p class="think-label">考察スレ 一覧</p>
                     <div class="card think-index-board">
+                        <ul id="think-thread">
+                            @foreach($rooms as $room)
+                                <li class="thread-li">
+                                    {{ $room['room_title'] }}
+                                    <p class="thread-p">{{ date("Y/m/d H:i", strtotime($room['created_at'])) }}</p>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
