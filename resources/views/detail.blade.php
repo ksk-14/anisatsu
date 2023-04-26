@@ -47,10 +47,12 @@
                     <div class="card think-index-board">
                         <ul id="think-thread">
                             @foreach($rooms as $room)
-                                <li class="thread-li">
-                                    {{ $room['room_title'] }}
-                                    <p class="thread-p">{{ date("Y/m/d H:i", strtotime($room['created_at'])) }}</p>
-                                </li>
+                                <a href="/api/room/{{ $room['id'] }}" class="room-link">
+                                    <li class="thread-li">
+                                        {{ $room['room_title'] }}
+                                        <p class="thread-p">{{ date("Y/m/d H:i", strtotime($room['created_at'])) }}</p>
+                                    </li>
+                                </a>
                             @endforeach
                         </ul>
                     </div>

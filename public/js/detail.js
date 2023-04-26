@@ -4,10 +4,10 @@ window.onload = function(){
     const ul_th = document.getElementById('think-thread');
 
     selectElement.addEventListener('change', (event) => {
-        const li_th = document.getElementsByClassName('thread-li');
-        if (li_th.length > 0) {
-        Array.from(li_th).forEach((li) => {
-            ul_th.removeChild(li);
+        const a_th = document.getElementsByClassName('room-link');
+        if (a_th.length > 0) {
+        Array.from(a_th).forEach((a) => {
+            ul_th.removeChild(a);
         });
         }
         
@@ -25,19 +25,27 @@ window.onload = function(){
         fetch(url)
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             data.forEach(work => {
                 const li = document.createElement('li');
+                const a = document.createElement('a');
+                const p = document.createElement('p');
+
+                a.href = `/api/thread/${work.id}`
+                a.setAttribute('href', `/api/thread/${work.id}`);
+                a.classList.add('room-link');
+
                 li.classList.add('thread-li');
                 li.id = 'think-thread-li';
                 li.appendChild(document.createTextNode(work.room_title));
-                const p = document.createElement('p');
+                
                 p.classList.add('thread-p');
                 const date = new Date(work.created_at);
                 const formattedDate = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
                 p.appendChild(document.createTextNode(formattedDate));
+
                 li.appendChild(p);
-                ul_th.appendChild(li);
+                a.appendChild(li);
+                ul_th.appendChild(a);
             });
         })
         .catch(error => console.error(error));
