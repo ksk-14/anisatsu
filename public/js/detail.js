@@ -25,21 +25,20 @@ window.onload = function(){
         fetch(url)
         .then(response => response.json())
         .then(data => {
-            data.forEach(work => {
+            data.forEach(room => {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
                 const p = document.createElement('p');
 
-                a.href = `/api/thread/${work.id}`
-                a.setAttribute('href', `/api/thread/${work.id}`);
+                a.setAttribute('href', `/api/room/${room.id}`);
                 a.classList.add('room-link');
 
                 li.classList.add('thread-li');
                 li.id = 'think-thread-li';
-                li.appendChild(document.createTextNode(work.room_title));
+                li.appendChild(document.createTextNode(room.room_title));
                 
                 p.classList.add('thread-p');
-                const date = new Date(work.created_at);
+                const date = new Date(room.created_at);
                 const formattedDate = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
                 p.appendChild(document.createTextNode(formattedDate));
 

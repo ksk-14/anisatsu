@@ -24,5 +24,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::get('/example', 'App\Http\Controllers\API\AnnictController@getIndex');
 Route::get('/getIndex', [AnnictController::class, 'getIndex']);
 Route::get('/works/{id}', [AnnictController::class, 'getDetail']);
-Route::get('/rooms/{workId}', [SelfController::class, 'getRoom']);
-Route::get('/rooms/{workId}/{episodeId}', [SelfController::class, 'getRoom']);
+Route::get('/rooms/{workId}', [SelfController::class, 'getRooms']);
+Route::get('/rooms/{workId}/{episodeId}', [SelfController::class, 'getRooms']);
+Route::get('/room/{roomId}', [SelfController::class, 'getRoom']);

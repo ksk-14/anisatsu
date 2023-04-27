@@ -12,8 +12,9 @@ class AnnictController extends Controller
 {
     private $annictClient;
 
-    public function __construct(AnnictClient $annictClient)
+    public function __construct()
     {
+        $annictClient = new AnnictClient();
         $this->annictClient = $annictClient;
     }
 
@@ -31,7 +32,7 @@ class AnnictController extends Controller
     public function getDetail($id)
     {
         $selfController = new SelfController();
-        $rooms = $selfController->getRoom($id);
+        $rooms = $selfController->getRooms($id);
         $worksParams = array(
             "filter_ids" => $id,
         );
@@ -43,7 +44,17 @@ class AnnictController extends Controller
         $episodesResult = $this->annictClient->getEpisodes($episodesParams);
         $works = $worksResult['works'][0];
         $episodes = $episodesResult['episodes'];
-        // dd($rooms);
+
         return view('detail', compact('works', 'episodes', 'rooms'));
+    }
+
+    public function getThreadWork($workId){
+        $worksParams = array(
+            "filter_ids" => $workId,
+        );
+        $worksResult = $this->annictClient->getWorks($worksParams);
+        $works = $worksResult['works'][0];
+
+        return $works;
     }
 }
